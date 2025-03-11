@@ -28,7 +28,7 @@ jobs:
           kubectl apply -f wordpress-deployment.yaml
           kubectl apply -f services.yaml
 
-      - name: Wait for pods to be ready
+      - name: Wait for pods to be ready 
         run: |
           kubectl wait --for=condition=ready pod -l app=mysql --timeout=120s
           kubectl wait --for=condition=ready pod -l app=wordpress --timeout=120s
